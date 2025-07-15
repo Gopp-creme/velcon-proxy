@@ -26,7 +26,7 @@ const config = {
 // API Key middleware
 const authenticateApiKey = (req, res, next) => {
   const apiKey = req.headers['x-api-key'];
-  if (!apiKey || apiKey !== process.env.API_KEY) {
+  if (!apiKey || apiKey !== process.env.SQL_PROXY_API_KEYY) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
   next();
